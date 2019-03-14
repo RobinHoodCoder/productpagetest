@@ -1,0 +1,71 @@
+/*
+Styling van gerekateerde producten
+*/
+.related-products-box{
+  .related-products-list{
+    font-size: 1.1em;
+    @media #{$tablet}{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+    @media #{$desktop}{
+    display: flex;
+    justify-content: space-between;
+  }
+  }
+  li{
+    min-height: 100px;
+  }
+  .related-product-item{
+    height:100%;
+    display: block;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    &:hover{
+      span.title{
+        text-decoration: underline;
+      }
+
+    }
+    @media #{$desktop}{
+    width: 24%;
+  }
+    @media #{$tablet}{
+    //width: 40%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: calc(#{"1/2*100% - (1 - 1/2) *10px"});
+  }
+  }
+  a{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .title{
+    margin-bottom: 10px;
+    display: block;
+    text-transform: capitalize;
+    line-height: 130%;
+  }
+  .price{
+    font-size: 1em;
+  }
+  .related-product-text{
+    float: left;
+    width: 70%;
+  }
+
+  img{
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    max-width: 90px;
+    padding-right: 10px;
+    width: 30%;
+  }
+}

@@ -1,0 +1,158 @@
+/*
+Styling van alles wat in het menu staat (boven en op andere navigatie plekken van website)
+*/
+header{
+  background: $theme-color-dark;
+  //box-shadow: 0px 24px 30px -31px rgba(0,0,0,0.75);
+}
+nav{
+  box-sizing: border-box;
+  padding: 10px 0;
+  .logo{
+    img{
+      width: 170px;
+      @media #{$desktop}{
+      width: 250px;
+    }
+      display: block;
+    }
+  }
+  ul{
+    margin: 0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    li{
+      margin:0;
+      list-style: none;
+      a{
+        color: #fff;
+        font-size: 1.3em;
+      }
+    }
+    .login-btn{
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    .shopping-cart{
+      margin: 0;
+      position: relative;
+      a{
+        display: inline-block;
+      }
+      .cart-amount{
+        position: absolute;
+        font-size: 0.8em;
+        right:-5px;
+        left: auto;
+        top:-5px;
+        bottom:auto;
+        display: inline-block;
+        color: $theme-color-dark;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        &.contains-items{
+          background: $orange;
+          &.animate{
+            animation: 1s sticker 1s ease-in-out;
+          }
+        }
+        span{
+          left:0;
+          right:0;
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+    }
+  }
+}
+.breadcrumbs{
+  margin: 15px 0;
+  list-style: none;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 1.1em;
+  display: none;
+
+  @media #{$tablet}{
+  display: block;
+  font-size: 1.2em;
+}
+  @media #{$desktop}{
+  display: block;
+  font-size: 1.3em;
+  //li{display: block}
+  li{
+    &:nth-last-child(2){
+      display: block;
+    }
+  }
+}
+  ul{
+    padding:0;
+  }
+  li{
+    float: left;
+    list-style: none;
+    padding:0;
+    span{
+      font-weight: 400;
+      display: block;
+      color: lighten($theme-color-dark,20%);
+      text-decoration: none;
+      position: relative;
+      display: block;
+      float: left;
+      padding: 5px 10px 5px 0;
+    }
+    a{
+      display: block;
+      span{
+        &:after{
+          margin-left: 10px;
+          color: lighten($theme-color-dark,20%);
+          content: '>';
+          display: inline-block;
+        }
+      }
+    }
+    strong{
+      padding: 10px 20px 10px 0;
+      display: block;
+    }
+  }
+
+}
+.shopping-cart{
+  img{
+    width: 40px;
+    transition: all.2s ease-in-out;
+    &:active{
+      transform: scale(0.9);
+    }
+    @media #{$desktop}{
+    width: 50px;
+  }
+  }
+}
+.product-detail-navigation{
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 20px;
+  li{
+    font-weight: 400;
+    float:none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    a{
+      margin-right: 15px;
+      text-decoration: underline;
+    }
+  }
+}

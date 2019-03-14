@@ -1,0 +1,27 @@
+h3 {
+  font-size: 1.2em;
+}
+
+.card {
+  margin-bottom: 30px;
+  a h3{
+    color: $font-color-base
+  }
+}
+.card-body{
+
+}
+
+.card-img-container {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.card-img-top {
+  min-height: 180px;
+  width: auto;
+  max-width: 80%;
+}
+.product-overview{
+  margin-top: 30px;
+}

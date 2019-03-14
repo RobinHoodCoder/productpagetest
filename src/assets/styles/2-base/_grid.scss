@@ -1,0 +1,10 @@
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media #{$wrapper-reached} {
+  .wrapper{
+    width: calc(100% - 30px);
+  }
+}

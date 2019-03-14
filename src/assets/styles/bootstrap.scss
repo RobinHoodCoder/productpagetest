@@ -1,0 +1,27 @@
+
+
+@import "1-helpers/_variables.scss";
+@import "1-helpers/_reset.scss";
+@import "1-helpers/_mediaqueries.scss";
+@import "1-helpers/_mixins";
+@import "1-helpers/_functions";
+
+/* 2. Base -- Styling van de kleinste onderdelen*/
+@import "2-base/_typography.scss";
+@import "2-base/_buttons.scss";
+@import "2-base/_grid.scss";
+@import "2-base/_base-elements.scss";
+
+/* 3. Layout -- Styling van de grotere onderdelen */
+@import "3-layout/_nav.scss";
+@import "3-layout/_shopping-cart.scss";
+@import "3-layout/_purchase-box.scss";
+@import "3-layout/_related-products.scss";
+@import "3-layout/_shopping-cart.scss";
+
+/*4. Modules -- Styling van additionele modules voor hergebruik*/
+@import "4-modules/_lightbox.scss";
+
+/* 5. Templates -- Styling van pagina-specifieke elementen*/
+@import "5-templates/_product-detail.scss";
+@import "5-templates/_product-overview.scss";
