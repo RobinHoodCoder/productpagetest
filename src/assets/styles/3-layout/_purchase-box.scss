@@ -24,6 +24,9 @@ Styling van de product koop box
     &.unavailable{
       color: $red;
     }
+    span{
+      margin-left: 3px;
+    }
   }
 }
 ul.usp-list{

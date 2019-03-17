@@ -13,14 +13,20 @@ h3 {
 }
 
 .card-img-container {
-  text-align: center;
-  padding-top: 10px;
+  position: relative;
+  height: 200px;
 }
 
 .card-img-top {
-  min-height: 180px;
+  position: absolute;
+  top:20px;
+  right:0;
+  bottom: 0;
+  left:0;
+  margin:auto;
+  height: 100%;
   width: auto;
-  max-width: 80%;
+  display: block;
 }
 .product-overview{
   margin-top: 30px;

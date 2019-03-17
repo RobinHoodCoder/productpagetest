@@ -16,6 +16,14 @@ article.product-detail-text{
     line-height: 180%;
     margin-bottom: 12px;
   }
+  ul{
+    li{
+      &:not(:first-child){
+        list-style:square;
+        margin-left:20px;
+      }
+    }
+  }
 }
 .detail-table{
   max-width: 500px;

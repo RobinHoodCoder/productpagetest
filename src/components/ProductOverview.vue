@@ -10,10 +10,11 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{el.name}}</h3>
-                                <span @click.prevent="goToProduct(el.name)" class="btn btn-secondary">
-                                    <i class="fas fa-info"></i>
-                                </span>
-                                <span class="btn btn-primary float-right">In winkelwagen</span>
+                                <div class="price-box">
+                                    <span :class="initialPriceClass(el)" class="price product__price-initial" data-initial-price="2499">{{el.price}}</span>
+                                    <span v-if="el.special_price" class="price special-price product__price-special" itemprop="price" data-price="2299">{{el.special_price}}</span>
+                                </div>
+                                <AddToCartBtn :isLarge="false" :item="el"/>
                             </div>
                         </div>
                     </article>
@@ -28,6 +29,15 @@
 	import imagesLoaded from 'vue-images-loaded'
 	import slugify from 'slugify'
 	import db from '@/firebase/init'
+
+
+    //Font awesome icons
+	import { library } from '@fortawesome/fontawesome-svg-core'
+	import { faInfo as faInfo } from '@fortawesome/free-solid-svg-icons'
+	library.add(faInfo)
+
+	import AddToCartBtn from "@/components/Shop/AddToCartBtn";
+
 
 	// const firebase = require('firebase')
     //
@@ -51,7 +61,8 @@
 			imagesLoaded
 		},
 		components: {
-			isotope
+			isotope,
+            AddToCartBtn
 		},
 		data() {
 			return {
@@ -75,6 +86,11 @@
 			}
 		},
 		methods: {
+			initialPriceClass(item){
+				return {
+					'initial-price': item.special_price,
+					'single-price': !item.special_price}
+			},
 			goToProduct(id){
 				let productSlug = slugify(id,{
 					replacement: '',

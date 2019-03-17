@@ -22,6 +22,15 @@ button{
     background: $bgcolor;
     color: $fgcolor;
 }
+@mixin btn-small($bgcolor : $theme-color-main, $fgcolor: $font-color-base){
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    background: $bgcolor;
+    color: $fgcolor;
+}
+
 @mixin btn-basic($bgcolor :$border-color ,$fgcolor: $font-color-base){
     font-size: 1.2em;
     padding:20px;
@@ -35,9 +44,10 @@ button{
     }
 }
 @mixin btn-small($bgcolor :$border-color ,$fgcolor: $font-color-base){
-    font-size: 1em;
+    font-size: 1.2em;
     padding:10px;
     border-radius: 10px;
+    width: 100%;
     &:not(.btn-outline){
         background: $bgcolor;
         color: $fgcolor;
@@ -84,7 +94,12 @@ button{
     &:hover{
         opacity: 0.9;
     }
-    @include btn-large($green-bright,#fff);
+    &.btn-large{
+        @include btn-large($green-bright,#fff);
+    }
+    &.btn-small{
+        @include btn-small($green-bright,#fff);
+    }
     @include btn-clicky(4px,darken($green-bright,7%));
     &.added-to-cart{
         @include btn-large($green-normal,#fff);

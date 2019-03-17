@@ -58,6 +58,9 @@ Styling van gerekateerde producten
   .related-product-text{
     float: left;
     width: 70%;
+    .price:nth-child(3){
+      margin-left:5px;
+    }
   }
 
   img{

@@ -12,7 +12,6 @@
                         <div class="content-box">
                             <div class="price-box" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                                 <div class="prices left-floated">
-
                                     <span :class="initialPriceClass(product)" class="price product__price-initial" data-initial-price="2499">{{product.price}}</span>
                                     <span v-if="product.special_price" class="price special-price product__price-special" itemprop="price" data-price="2299">{{product.special_price}}</span>
                                     <meta itemprop="priceCurrency" content="EUR"/>
@@ -23,7 +22,8 @@
                                 </div>
                                 <div class="cleared"></div>
                             </div>
-                            <button data-action="ADD_PRODUCT_TO_CART" class="button-purchase btn-large">In mijn winkelwagentje</button>
+                            <AddToCartBtn :isLarge="true" :item="product"/>
+                            <!--<button data-action="ADD_PRODUCT_TO_CART" class="button-purchase btn-large">In mijn winkelwagentje</button>-->
                             <span class="status-message warning">Nog {{product.qty}} op voorraad!</span>
                             <div class="usps-box">
                                 <ul class="usp-list">
@@ -117,7 +117,7 @@
     import jsonProducts from '@/assets/json/product-db.json'
 	import vueSmoothScroll from 'vue2-smooth-scroll'
 
-	import AddToCart from "@/components/Shop/AddToCart";
+	import AddToCartBtn from "@/components/Shop/AddToCartBtn"
 
     import Lightbox from '@/components/Lightbox'
 
@@ -131,6 +131,7 @@
 	        vueSmoothScroll
         },
 		components: {
+			AddToCartBtn,
 			Lightbox
 		},
         data(){
