@@ -10,10 +10,8 @@ Vue.use(VueCookies)
 
 // set default config for Vue-Cookies
 VueCookies.config('7d')
-
-// set global cookie
-VueCookies.set('theme','default');
-VueCookies.set('hover-time','1s');
+VueCookies.set('theme','default')
+VueCookies.set('hover-time','1s')
 
 
 

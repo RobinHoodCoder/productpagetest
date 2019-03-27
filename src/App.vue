@@ -15,7 +15,10 @@
 <script>
   import Navbar from "@/components/TheNavbar";
 
+
   export default {
-    components: {Navbar}
+    components: {
+      Navbar
+    }
   }
 </script>
